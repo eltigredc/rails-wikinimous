@@ -1,0 +1,15 @@
+
+<h1>Your Articles</h1> <%= link_to "add a article", new_article_path %>
+<div class="container">
+  <ul>
+<% @articles.each do |article| %>
+<li><h2><%= link_to article.title, article_path(article) %></h2></li>
+<li><p><%= article.content %></p></li>
+<%= link_to "edit article", edit_article_path(article) %>
+<%= link_to "delete article", article_path(article), method: :delete %>
+<% end %>
+</ul>
+</div>
+
+
+
